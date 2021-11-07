@@ -12,6 +12,7 @@ body{
     font-weight: 500;
     display: flex;
     min-height: 100vh;
+    min-width: 100vw;
 }
 main{
     width: 50vw;
@@ -19,6 +20,7 @@ main{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 2rem 4rem;
 }
 main h1{
     color: #8880FE;
@@ -56,7 +58,6 @@ main .alternave .or::before, main .alternave .or::after{
     bottom: 50%;
     right: 50px;
     background:rgba(255, 255, 255, 0.3);
-
 }
 main .alternave .or::after{
     left: 50px;
@@ -95,7 +96,7 @@ main form input.button{
     background: #6c63FF;
     color: #fff;
     font-size: 1.1rem;
-    /*transition: all 3s ease-in-out;*/
+    transition: all 3s ease-in-out;
 }
 main form input.button:hover{
     background: #5952d4;
@@ -103,19 +104,21 @@ main form input.button:hover{
 section.imagens{
     display: flex;
     align-items: flex-end;
-   padding: 4rem; 
+    padding: 4rem; 
 }
 section.imagens img{
     width: 100%;
     padding-left: 100px;
 }
 section.imagens .circle{
+    display: flex;
+    align-items: flex-end;
     position: absolute;
     height: 100%;
     width: 100%;
     top: 0;
     left: 0;
     background: linear-gradient(45deg, #e8cbc0, #636FA4);
-    clip-path: circle(55% at right 100%);
+    clip-path: circle(55% at right 150%);
     z-index: -1;
 }
