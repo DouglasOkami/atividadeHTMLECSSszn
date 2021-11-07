@@ -13,6 +13,7 @@ body{
     font-weight: 500;
     display: flex;
     min-height: 100vh;
+    min-width: 100vw;
 }
 main{
     width: 50vw;
@@ -25,6 +26,7 @@ main h1{
     color: #1981CD;
     font-size: 3rem;
     margin-bottom: 3rem;
+    text-align: center;
 }
 main .social-media{
     display: flex;
@@ -101,8 +103,10 @@ main form input.button:hover{
     background:#00BDCE;
 }
 section.images{
+    width: 50vw;
     display: flex;
     align-items: flex-end;
+    justify-content: flex-end;
     padding: 4rem;
 }
 section.images img{
@@ -120,4 +124,33 @@ section.images .circle{
 }
 #password{
     text-align: center;
+}
+@media only screen and (min-width:900px) and (max-width: 1200px){
+    section.images img{
+        width: 110%;
+    }
+    section.images .circle{
+   
+        clip-path: circle(55% at right 80%);
+    }
+}
+@media only screen and (max-width:900px){
+    section.images {
+        display: none;
+        visibility: hidden;
+    }
+    main{
+        width: 100vw;
+    }
+}
+@media only screen and (max-width:450px){
+    main h1{
+        font-size: 2rem;
+    }
+    main .alternative span{
+        font-size: 0.8rem;
+    }
+    main form label span, main form input.button{
+        font-size: 1rem;
+    }
 }
