@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background-color: #1b2029;
+    color: #fff;
+    font-weight: 500;
+    display: flex;
+    min-height: 100vh;
+}
+main{
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+main h1{
+    color: #8880FE;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+}
+main .social-media{
+    display: flex;
+    align-items: center;
+}
+main .social-media a{
+    text-decoration: none;
+}
+main .social-media img{
+    width: 36px;
+    margin-left: 3rem;    
+}
+main .social-media a:first-child img{
+    margin-left: 0;
+}
+main .alternave{
+    margin-top: 1rem;
+}
+main .alternave .or{
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.3);
+    position: relative;
+}
+main .alternave .or::before, main .alternave .or::after{
+    position: relative;
+    content: '';
+    height: 1px;
+    width: 100px;
+    bottom: 50%;
+    right: 50px;
+    background:rgba(255, 255, 255, 0.3);
+
+}
+main .alternave .or::after{
+    left: 50px;
+}
+main form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+main form label{
+    display: flex;
+    flex-direction: column;
+}
+main form label span{
+    font-size: 1.1rem;
+    margin-top: 2rem;
+}
+main form input{
+    background: #6A5ACD;
+    width: 300px;
+    height: 50px;
+    padding: 0 0.5rem;
+    margin-top: 1rem;
+    outline: none;
+    color: #A9A9A9;
+    font-size: 1rem;
+    border: 1px solid #040b18;
+    border-radius: 8px;
+}
+main form input.button{
+    cursor: pointer;
+    width: 50%;
+    margin-top: 4rem;
+    border: none;
+    border-radius: 32px;
+    background: #6c63FF;
+    color: #fff;
+    font-size: 1.1rem;
+    /*transition: all 3s ease-in-out;*/
+}
+main form input.button:hover{
+    background: #5952d4;
+}
+section.imagens{
+    display: flex;
+    align-items: flex-end;
+   padding: 4rem; 
+}
+section.imagens img{
+    width: 100%;
+    padding-left: 100px;
+}
+section.imagens .circle{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(45deg, #e8cbc0, #636FA4);
+    clip-path: circle(55% at right 100%);
+    z-index: -1;
+}
