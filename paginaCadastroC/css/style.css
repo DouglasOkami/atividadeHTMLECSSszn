@@ -8,7 +8,7 @@
     font-family: "Poppins", sans-serif;
 }
 body{
-    background: #1b2029;
+    background: #00CCEE;
     color: #fff;
     font-weight: 500;
     display: flex;
@@ -22,7 +22,7 @@ main{
     justify-content: center;
 }
 main h1{
-    color: #8880FE;
+    color: #1981CD;
     font-size: 3rem;
     margin-bottom: 3rem;
 }
@@ -75,7 +75,7 @@ main form label span{
     margin-top: 2rem;
 }
 main form input{
-    background: #6A5ACD;
+    background: #1981CD;
     width: 300px;
     height: 50px;
     padding: 0 0.5rem;
@@ -92,13 +92,13 @@ main form input.button{
     margin-top: 4rem;
     border: none;
     border-radius: 32px;
-    background: #6c63FF;
+    background: #1981CD;
     color: #fff;
     font-size: 1.1rem;
     transition: all 3s ease-in-out;
 }
 main form input.button:hover{
-    background:#5952d4;
+    background:#00BDCE;
 }
 section.images{
     display: flex;
@@ -114,7 +114,10 @@ section.images .circle{
     width: 100%;
     top: 0;
     left: 0;
-    background: linear-gradient(45deg, #e8cbc0, #636FA4);
+    background: linear-gradient(45deg, #00F260, #0575E6);
     clip-path: circle(45% at right 80%);
     z-index: -1;
+}
+#password{
+    text-align: center;
 }
