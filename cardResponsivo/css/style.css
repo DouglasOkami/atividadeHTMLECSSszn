@@ -26,7 +26,7 @@ main.cards section.card{
     background: #fff;
     padding: 1rem 1.5rem;
     border-radius: 8px;
-    max-height: 256px;
+    max-height: 468px;
     margin-left: 32px;
 }
 main.cards section.card:first-child{
@@ -40,6 +40,7 @@ main.cards section.card img{
   width: 100%;
 }
 main.cards section.card h3{
+    font-size: 100%;
     margin: 16px 0;
 }
 main.cards section.card span{
@@ -75,4 +76,21 @@ main.cards section.card.shop{
 }
 main.cards section.card.about{
     box-shadow: 20px 20px 50px -30px #ffc1d5;
+}
+@media screen and (max-width:720px){
+    main.cards{
+        flex-direction: column;
+        padding: 4rem;
+        margin-top: 6rem;
+    }
+    main.cards section.card{
+        margin-left: 0;
+        margin-bottom: 32px;
+    }
+    main.cards section.card:last-child{
+        margin-bottom: 0;
+    }
+    main.cards section.card button{
+        font-size: 70%;
+    }
 }
