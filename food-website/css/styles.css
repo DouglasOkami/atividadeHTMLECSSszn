@@ -23,6 +23,41 @@ section{
     padding: 2rem 9%;
 }
 
+section:nth-child(even){
+    background: #eee;
+}
+
+.sub-heading{
+    text-align: center;
+    color: var(--green);
+    font-size: 2rem;
+    padding-top: 1rem;
+}
+
+.heading{
+    text-align: center;
+    color: var(--black);
+    font-size: 3rem;
+    padding-top: 2rem;
+    text-transform: uppercase;
+}
+
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    font-size: 1.7rem;
+    color: #fff;
+    background:var(--black);
+    border-radius: .5rem;
+    cursor: pointer;
+    padding: .8rem 3rem;
+}
+
+.btn:hover{
+    background: var(--green);
+    letter-spacing: .1rem;
+}
+
 html{
     font-size: 62.5%;
     overflow-x: hidden;
@@ -142,6 +177,55 @@ padding: 0 1rem;
     font-size: 5rem;
 }
 
+/*Styles Home*/
+
+.home .home-slider .slide{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+   padding-top: 9rem;
+}
+
+.home .home-slider .slide .content{
+    flex: 1 1 45rem;
+}
+
+.home .home-slider .slide .image{
+    flex: 1 1 45rem;
+}
+
+.home .home-slider .slide .image img{
+    width: 100%;
+}
+
+.home .home-slider .slide .content span{
+    color: var(--green);
+    font-size: 2.5rem;
+}
+
+.home .home-slider .slide .content h3{
+    color: var(--black);
+    font-size: 7rem;
+}
+
+.home .home-slider .slide .content p{
+    color: var(--light-color);
+    font-size: 2.2rem;
+    padding: .5rem 0;
+    line-height: 1.5;
+}
+
+.swiper-pagination-bullet-active{
+    background: var(--green);
+} 
+
+
+
+
+
+
+
 /* Media Queris*/
 
 @media (max-width:991px){
@@ -153,6 +237,10 @@ padding: 0 1rem;
     header{
     padding: 1rem 2rem;
     }
+
+    section{
+        padding: 2rem;
+        }
 }
 
 
@@ -188,6 +276,10 @@ padding: 0 1rem;
         width: 90%;
         margin: 0 1rem;
     }
+
+    .home .home-slider .slide .content h3{
+        font-size: 5rem;
+    }
 }   
 
 @media (max-width:991px){
@@ -197,11 +289,3 @@ padding: 0 1rem;
     }
 
 }
-
-/*Styles Home*/
-
- .home .home-slider .slide{
-     display: flex;
-     align-items: center;
-     flex-wrap: wrap;
- }
