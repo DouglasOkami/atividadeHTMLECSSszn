@@ -38,7 +38,7 @@ section:nth-child(even){
     text-align: center;
     color: var(--black);
     font-size: 3rem;
-    padding-top: 2rem;
+    padding-bottom: 2rem;
     text-transform: uppercase;
 }
 
@@ -410,7 +410,7 @@ padding: 0 1rem;
 
 .menu .box-container .box .image .fa-heart:hover{
     background-color: var(--green);
-    color: #fff \;
+    color: #fff;
 }
 
 .menu .box-container .box .content{
@@ -449,26 +449,51 @@ padding: 0 1rem;
 
 /*Style Review*/
 .review .slide{
-    
+    padding: 2rem;
+    box-shadow: var(--box-shadow);
+    border: .1rem solid rgba(0, 0,0, .2);
+    border-radius: .5rem;
+    position: relative;
 }
 
+.review .slide .fa-quote-right{
+    position: absolute;
+    top: 2rem;right: 2rem;
+    font-size: 6rem;
+    color: #ccc;
 
+}
 
+.review .slide .user{
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    padding-bottom: 1.5rem;
+}
 
+.review .slide .user img{
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
 
+.review .slide .user h3{
+    color: var(--black);
+    font-size: 2rem;
+    padding-bottom: .5rem;
+}
 
+.review .slide .user i{
+    font-size: 1.3rem;
+    color: var(--green);
+}
 
-
-
-
-
-
-
-
-
-
-
-
+.review .slide p{
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: var(--light-color);
+}
 
 /* Media Queris*/
 
@@ -537,4 +562,4 @@ padding: 0 1rem;
         width: 100%;
     }
 
-}
+} 
