@@ -6,6 +6,9 @@ menu.onclick = () => {
   navbar.classList.toggle('active');
 }
 
+let section = document.querySelectorAll('section');
+let navLinks = document.querySelectorAll('header');
+
 window.onscroll = () => {
   menu.classList.remove('fa-times');
   navbar.classList.remove('active');
