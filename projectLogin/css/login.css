@@ -71,7 +71,9 @@ h1{
     transition: all .3s ease-out;
 }
 
-.label-float input:focus + label{
+.label-float input:focus + label,
+.label-float input:valid + label,
+input::placeholder{
     font-size: 13px;
     margin-top: 0; 
     color: rgb(0, 225, 255);
@@ -120,5 +122,17 @@ a{
 }
 
 a:hover{
+    color: rgb(1, 143, 161);
+}
+/*
+input::placeholder{
+    color: rgb(0, 225, 255);
+}
+*/
+.fa-eye{
+    position: absolute;
+    top: 14px;
+    right: 10px;
+    cursor: pointer;
     color: rgb(1, 143, 161);
 }
