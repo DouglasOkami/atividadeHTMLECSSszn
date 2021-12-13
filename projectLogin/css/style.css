@@ -3,4 +3,32 @@
     padding: 0;
     margin: 0;
     font-family: "Poppins",sans-serif;
+    color: rgb(0, 0, 0);
+}
+
+body{
+    background-image: url(/image/agua.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    background-attachment: fixed;
+    text-decoration: none;
+    text-decoration-line: none;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 230px;
+}
+
+.card{
+    background-color: #ffffff80;
+    padding: 30px;
+    border-radius: 4%;
+    box-shadow: 3px 3px 1px 0px #00000070;
+    /*a mudança começa da direita. Primeiro 3px ta alterando
+    a parte direita seguinda pelo outro 3px que ta alterando em baixo,
+    o 1px a esquerda e 0px em cima*/
 }
