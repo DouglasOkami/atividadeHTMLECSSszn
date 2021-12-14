@@ -10,7 +10,12 @@ let usuario = document.querySelector("#usuario");
 let labelUsuario = document.querySelector("#labelUsuario");
 let validUsuario = false;
 
-//Dom Senha
+//Dom Senha Login
+let labelSenhaLogin = document.querySelector("#labelSenhaLogin");
+let inputSenhaLogin = document.querySelector("#senhaLogin");
+let validSenhaLogin = false;
+
+//Dom Senha Cadastro
 let labelSenha = document.querySelector("#labelSenha");
 let inputSenhaCadastro = document.querySelector("#senhaCadastro");
 let validSenha = false;
@@ -19,10 +24,6 @@ let validSenha = false;
 let labelconfirmSenha = document.querySelector("#labelconfirmSenha");
 let inputSenhaConfirma = document.querySelector("#confirmSenha");
 let validSenhaConfirma = false;
-
-let inputSenhaLogin = document.querySelector("#senhaLogin");
-//falta o label do login
-let validSenhaLogin = false;
 
 //Dom Error
 let msgError = document.querySelector('#msgError');
@@ -90,6 +91,17 @@ inputSenhaConfirma.addEventListener('keyup', () =>{
     }
 });
 
+//página olhinho Login
+let btn1 = document.querySelector("#verSenhaLogin");
+btn2.addEventListener('click', ()=>{
+    let inputSenha1 = document.querySelector("#senhaLogin");
+    if(inputSenha1.getAttribute('type') == 'password'){
+        inputSenha1.setAttribute('type', 'text');
+    }else{
+        inputSenha1.setAttribute('type', 'password');
+    }
+});
+
 //página olhinho Cadastrar
 let btn2 = document.querySelector("#verSenha");
 btn2.addEventListener('click', ()=>{
@@ -101,6 +113,7 @@ btn2.addEventListener('click', ()=>{
     }
 });
 
+//página olhinho Confirma Cadastro
 let btn3 = document.querySelector("#verConfirmaS");
 btn3.addEventListener('click', ()=>{
     let inputSenha3 = document.querySelector("#confirmSenha");
