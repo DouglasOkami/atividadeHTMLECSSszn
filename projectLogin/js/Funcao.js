@@ -1,16 +1,21 @@
 //let's
+
+//Dom Nome
 let nome = document.querySelector("#nome");
 let labelNome = document.querySelector("#labelNome");
 let validNome = false;
 
+//Dom usuario
 let usuario = document.querySelector("#usuario");
 let labelUsuario = document.querySelector("#labelUsuario");
 let validUsuario = false;
 
+//Dom Senha
 let labelSenha = document.querySelector("#labelSenha");
 let inputSenhaCadastro = document.querySelector("#senhaCadastro");
 let validSenha = false;
 
+//Dom Senha Confirma
 let labelconfirmSenha = document.querySelector("#labelconfirmSenha");
 let inputSenhaConfirma = document.querySelector("#confirmSenha");
 let validSenhaConfirma = false;
@@ -19,11 +24,17 @@ let inputSenhaLogin = document.querySelector("#senhaLogin");
 //falta o label do login
 let validSenhaLogin = false;
 
+//Dom Error
+let msgError = document.querySelector('#msgError');
+
+//Dom Success
+let msgSuccess = document.querySelector('#msgSuccess');
+
 //validações
 
 //nome
 nome.addEventListener('keyup', () =>{
-    if(nome.value.length <= 2){
+    if(nome.value.length < 3){
         labelNome.setAttribute('style','color: red');
         nome.setAttribute('style','border-color: red');
         labelNome.innerHTML = 'Nome *Insira no minímo 3 caracteres';
@@ -37,7 +48,7 @@ nome.addEventListener('keyup', () =>{
 });
 //Usuario
 usuario.addEventListener('keyup', () =>{
-    if(usuario.value.length <= 4){
+    if(usuario.value.length < 3){
         labelUsuario.setAttribute('style','color: red');
         usuario.setAttribute('style','border-color: red');
         labelUsuario.innerHTML = 'Usuario *Insira no minímo 3 caracteres';
@@ -79,19 +90,6 @@ inputSenhaConfirma.addEventListener('keyup', () =>{
     }
 });
 
-
-//página olhinho Login
-let btn = document.querySelector(".fa-eye");
-btn.addEventListener('click', ()=>{
-    let inputSenha1 = document.querySelector("#senhaLogin");
-    if(inputSenha1.getAttribute('type') == 'password'){
-        inputSenha1.setAttribute('type', 'text');
-    }else{
-        inputSenha1.setAttribute('type', 'password');
-    }
-});
-
-
 //página olhinho Cadastrar
 let btn2 = document.querySelector("#verSenha");
 btn2.addEventListener('click', ()=>{
@@ -116,8 +114,29 @@ btn3.addEventListener('click', ()=>{
 //Funções Top :)
 function cadastrar(){
     if(validNome && validUsuario && validSenha && validSenhaConfirma){
-        alert("Deu bom")
+        let listaUser = JSON.parse(localStorage.getItem('listaUser') || '[]');
+    
+        listaUser.push(
+            {
+                nomeCad: nome.value,
+                userCad: usuario.value,
+                senhaCad: inputSenhaCadastro.value
+            }
+        )
+
+        localStorage.setItem('listaUser', JSON.stringify(listaUser))
+
+        msgSuccess.setAttribute ('style', 'display: block');
+        msgSuccess.innerHTML = "Cadastrado com sucesso!!!";
+        msgError.setAttribute ('style', 'display: none');
+        msgError.innerHTML = "";
+        setTimeout(()=>{
+            window.location.href = 'http://127.0.0.1:5501/login.html';
+        }, 3000);
     }else{
-        alert("Os requerimentos não foram atendidos")
+        msgError.setAttribute ('style', 'display: block');
+        msgError.innerHTML = "Preencha todos os campos corretamente antes de cadastrar";
+        msgSuccess.innerHTML = "";
+        msgSuccess.setAttribute ('style', 'display: none');
     }
 }
