@@ -1,3 +1,4 @@
+
 //Dom Senha Login
 let labelSenhaLogin = document.querySelector("#labelSenhaLogin");
 let inputSenhaLogin = document.querySelector("#senhaLogin");
@@ -13,3 +14,26 @@ btn.addEventListener('click', ()=>{
         inputSenha1.setAttribute('type', 'password');
     }
 });
+
+
+//Funções Entrar :)
+function Entrar(){
+    let usuario = document.querySelector('#usuario');
+    let userLabel = document.querySelector('#userLabel');
+
+    inputSenhaLogin;
+    labelSenhaLogin;
+
+    let msgError = document.querySelector('#msgError');
+    let listaUser = [];
+
+    let userValid = {
+        nome: '',
+        user: '',
+        senha: ''
+    }
+
+    listaUser = JSON.parse(localStorage.getItem('listaUser'));
+
+    console.log(listaUser)
+}

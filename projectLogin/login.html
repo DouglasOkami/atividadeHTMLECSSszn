@@ -12,9 +12,12 @@
     <div class="container">
         <div class="card">
             <h1>Entrar</h1>
+
+            <div id="msgError"></div>
+
             <div class="label-float">   
                 <input type="text" id="usuario" placeholder="" required>
-                <label for="usuario">Usuario</label>
+                <label id="userLabel" for="usuario">Usuario</label>
             </div>
 
             <div class="label-float">   
@@ -24,7 +27,7 @@
             </div>
 
             <div class="justify-center">
-                <button>Entrar</button>
+                <button onclick="Entrar()">Entrar</button>
             </div>
 
             <div class="justify-center">
