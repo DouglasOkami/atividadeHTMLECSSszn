@@ -85,9 +85,10 @@ confirmSenha.addEventListener('keyup', ()=>{
 });
 
 //Função Cadastrar
+
 function cadastrar(){
     if(validNome && validUsuario && validSenha && validConfirmSenha){
-    let listaUser = JSON.parse(localStorage.getItem('listaUser') || '[]')
+    let listaUser = JSON.parse(localStorage.getItem("listaUser") || "[]")
    
     listaUser.push({
         nomeCad: nome.value,
@@ -113,22 +114,3 @@ function cadastrar(){
         msgSucess.setAttribute('style', 'display:none');
     }
 }
-
-//Função Olhinho Senha
-btnSenha.addEventListener('click', ()=>{
-    let inputSenha = document.querySelector('#senha');
-    if(inputSenha.getAttribute('type')== 'password'){
-        inputSenha.setAttribute('type', 'text')
-    }else{
-        inputSenha.setAttribute('type', 'password')
-    }
-});
-//Função Olhinho Confirma Senha
-btnConfirm.addEventListener('click', ()=>{
-    let inputSenha = document.querySelector('#confirmSenha');
-    if(inputSenha.getAttribute('type')== 'password'){
-        inputSenha.setAttribute('type', 'text')
-    }else{
-        inputSenha.setAttribute('type', 'password')
-    }
-});

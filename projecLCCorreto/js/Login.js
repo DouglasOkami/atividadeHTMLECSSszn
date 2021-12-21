@@ -9,6 +9,7 @@ btn.addEventListener('click', ()=>{
     }
 });
 
+
 function entrar(){
     let usuario = document.querySelector('#usuario');
     let userLabel =  document.querySelector('#userLabel');
@@ -26,7 +27,7 @@ function entrar(){
     }
 
     listaUser = JSON.parse(localStorage.getItem('listaUser'));
-    listaUser.forEach(item => {
+    listaUser.forEach((item) => {
         if(usuario.value == item.userCad && senha.value == item.senhaCad){
           
             userValid = {
@@ -36,13 +37,11 @@ function entrar(){
             }
         }
     });
-
-    console.log(usuario, userValid);
-
-    if(usuario.value == userValid.user && senha.value == userValid.senha){
+ 
+    if(usuario.value != '' && senha.value != '' && usuario.value == userValid.user && senha.value == userValid.senha){
         let token = Math.random().toString(16).substring(2) + Math.random().toString(16).substring(2);
-        localStorage.setItem('token',token)
         window.location.href = "http://127.0.0.1:5500/Inicio.html";
+        localStorage.setItem('token',token)
         localStorage.setItem('userLogado', JSON.stringify(userValid));
     }else{
         userLabel.setAttribute('style', 'color:red');
@@ -53,8 +52,4 @@ function entrar(){
         msgError.innerHTML = ('Usuário ou senha incorretos');
         usuario.focus()
     }
-
-
-
-
-}
+}  
