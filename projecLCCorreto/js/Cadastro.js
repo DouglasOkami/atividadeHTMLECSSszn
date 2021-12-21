@@ -23,14 +23,14 @@ let validConfirmSenha = false;
 let msgError = document.querySelector('#msgError');
 let msgSucess = document.querySelector('#msgSuccess');
 
-nome.addEventListener('keyup', ()=>{
-    if(nome.value.length <= 2){
-        labelNome.setAttribute('style','color:red');
+nome.addEventListener('keyup', () => {
+    if (nome.value.length <= 2) {
+        labelNome.setAttribute('style', 'color:red');
         labelNome.innerHTML = 'Nome *Insira no mínimo 3 caracteres';
-        nome.setAttribute('style','border-color:red');
+        nome.setAttribute('style', 'border-color:red');
         validNome = false;
-       
-    }else{
+
+    } else {
         labelNome.setAttribute('style', 'color:green');
         labelNome.innerHTML = 'Nome'
         nome.setAttribute('style', 'border-color:green');
@@ -39,46 +39,46 @@ nome.addEventListener('keyup', ()=>{
 });
 
 
-usuario.addEventListener('keyup', ()=>{
-    if(usuario.value.length <= 4){
-        labelUsuario.setAttribute('style','color:red');
+usuario.addEventListener('keyup', () => {
+    if (usuario.value.length <= 4) {
+        labelUsuario.setAttribute('style', 'color:red');
         labelUsuario.innerHTML = 'Usuario *Insira no mínimo 5 caracteres';
-        usuario.setAttribute('style','border-color:red');
+        usuario.setAttribute('style', 'border-color:red');
         validUsuario = false;
-       
-    }else{
+
+    } else {
         labelUsuario.setAttribute('style', 'color:green');
-        labelUsuario.innerHTML = 'Usuario'
+        labelUsuario.innerHTML = 'Usuario';
         usuario.setAttribute('style', 'border-color:green');
         validUsuario = true;
     }
 });
 
-senha.addEventListener('keyup', ()=>{
-    if(senha.value.length <= 5){
-        labelSenha.setAttribute('style','color:red');
+senha.addEventListener('keyup', () => {
+    if (senha.value.length <= 5) {
+        labelSenha.setAttribute('style', 'color:red');
         labelSenha.innerHTML = 'Senha *Insira no mínimo 6 caracteres';
-        senha.setAttribute('style','border-color:red');
+        senha.setAttribute('style', 'border-color:red');
         validSenha = false;
-       
-    }else{
+
+    } else {
         labelSenha.setAttribute('style', 'color:green');
-        labelSenha.innerHTML = 'Senha'
+        labelSenha.innerHTML = 'Senha';
         senha.setAttribute('style', 'border-color:green');
         validSenha = true;
     }
 });
 
-confirmSenha.addEventListener('keyup', ()=>{
-    if(senha.value != confirmSenha.value){
-        labelConfirmSenha.setAttribute('style','color:red');
+confirmSenha.addEventListener('keyup', () => {
+    if (senha.value != confirmSenha.value) {
+        labelConfirmSenha.setAttribute('style', 'color:red');
         labelConfirmSenha.innerHTML = 'Confirmar Senha *As senhas não conferem';
-        confirmSenha.setAttribute('style','border-color:red');
+        confirmSenha.setAttribute('style', 'border-color:red');
         validConfirmSenha = false;
-       
-    }else{
+
+    } else {
         labelConfirmSenha.setAttribute('style', 'color:green');
-        labelConfirmSenha.innerHTML = 'Confirmar Senha'
+        labelConfirmSenha.innerHTML = 'Confirmar Senha';
         confirmSenha.setAttribute('style', 'border-color:green');
         validConfirmSenha = true;
     }
@@ -86,28 +86,28 @@ confirmSenha.addEventListener('keyup', ()=>{
 
 //Função Cadastrar
 
-function cadastrar(){
-    if(validNome && validUsuario && validSenha && validConfirmSenha){
-    let listaUser = JSON.parse(localStorage.getItem("listaUser") || "[]")
-   
-    listaUser.push({
-        nomeCad: nome.value,
-        userCad: usuario.value,
-        senhaCad: senha.value
-    });
+function cadastrar() {
+    if (validNome && validUsuario && validSenha && validConfirmSenha) {
+        let listaUser = JSON.parse(localStorage.getItem("listaUser") || "[]");
 
-    localStorage.setItem('listaUser', JSON.stringify(listaUser))
+        listaUser.push({
+            nomeCad: nome.value,
+            userCad: usuario.value,
+            senhaCad: senha.value
+        });
 
-    msgSucess.setAttribute('style', 'display:block');
-     msgSucess.innerHTML = "Cadastrando usuário...";
-     msgError.setAttribute('style', 'display:none');
-     msgError.innerHTML = "";
+        localStorage.setItem('listaUser', JSON.stringify(listaUser));
 
-    setTimeout(()=>{
-        window.location.href = 'http://127.0.0.1:5500/Login.html'
-    },3000);
-    
-    }else{
+        msgSucess.setAttribute('style', 'display:block');
+        msgSucess.innerHTML = "Cadastrando usuário...";
+        msgError.setAttribute('style', 'display:none');
+        msgError.innerHTML = "";
+
+        setTimeout(() => {
+            window.location.href = 'http://127.0.0.1:5500/Login.html'
+        }, 3000);
+
+    } else {
         msgError.setAttribute('style', 'display:block');
         msgError.innerHTML = "Preencha todos os campos corretamente antes de cadastrar";
         msgSucess.innerHTML = "";

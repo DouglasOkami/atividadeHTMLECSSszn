@@ -3,9 +3,9 @@ let btn = document.querySelector('.fa-eye');
 btn.addEventListener('click', ()=>{
     let inputSenha = document.querySelector('#senha');
     if(inputSenha.getAttribute('type')== 'password'){
-        inputSenha.setAttribute('type', 'text')
+        inputSenha.setAttribute('type', 'text');
     }else{
-        inputSenha.setAttribute('type', 'password')
+        inputSenha.setAttribute('type', 'password');
     }
 });
 
@@ -41,7 +41,7 @@ function entrar(){
     if(usuario.value != '' && senha.value != '' && usuario.value == userValid.user && senha.value == userValid.senha){
         let token = Math.random().toString(16).substring(2) + Math.random().toString(16).substring(2);
         window.location.href = "http://127.0.0.1:5500/Inicio.html";
-        localStorage.setItem('token',token)
+        localStorage.setItem('token',token);
         localStorage.setItem('userLogado', JSON.stringify(userValid));
     }else{
         userLabel.setAttribute('style', 'color:red');
@@ -50,6 +50,6 @@ function entrar(){
         senha.setAttribute('style', 'border-color:red');
         msgError.setAttribute('style', 'display: block');
         msgError.innerHTML = ('Usuário ou senha incorretos');
-        usuario.focus()
+        usuario.focus();
     }
 }  
